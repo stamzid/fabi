@@ -14,7 +14,7 @@ from fabi.utils.logging_utils import service_logger
 DB_HOST = os.getenv("DB_HOST", "interview-sandbox.c7myq48g2e87.us-east-1.rds.amazonaws.com")
 DB_PORT = os.getenv("DB_PORT", 5432)
 DB_USER = os.getenv("DB_USER", "interviewee")
-DB_PASS = os.getenv("DB_PASS", "fabi.aiiscool")
+DB_PASS = os.getenv("DB_PASS", "password")
 DB_NAME = os.getenv("DB_NAME", "toy_example")
 
 connection_pool = None
