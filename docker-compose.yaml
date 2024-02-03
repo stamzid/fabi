@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: fabi_postgres
+    command: postgres -c 'max_connections=1024'
+    environment:
+      SERVICE_NAME: 'postgres'
+      POSTGRES_DB: 'fabi'
+      POSTGRES_USER: 'fabi'
+      POSTGRES_PASSWORD: 'fabi'
+      POSTGRES_SCHEMA: 'fabi'
+      POSTGRES_MAX_CONNECTIONS: 1024
+    ports:
+      - 5432:5432
+    networks:
+      - fabi
+    volumes:
+      - ./sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql
+  fabi:
+    build: .
+    container_name: fabi_postgres
+    ports:
+      - 8000:8000
+    networks:
+      - fabi
+networks:
+  fabi:
+    driver: bridge
+

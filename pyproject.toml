@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "fabi"
+version = "1.0.0"
+description = ""
+authors = ["Syed Tamzid <tamzid2004@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0.post1"
+sqlalchemy = "^2.0.25"
+psycopg2-binary = "^2.9.9"
+cachetools = "^5.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
